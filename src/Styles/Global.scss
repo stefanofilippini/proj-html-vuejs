@@ -1,0 +1,36 @@
+
+/* GENERALS */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Balsamiq Sans', cursive;
+    }
+
+    .button-1 {
+        background-color: #e5d45d;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: #e56768;
+        }
+    }
+
+    .button-2 {
+        background-color: white;
+        color: #e56768;
+        &:hover {
+            background-color: #e5d45d;
+            color: white;
+        }
+    }
+
+    .button-3 {
+        background-color: #e5d45d;
+        color: white;
+        &:hover {
+            background-color: #d62f32;
+            color: white;
+        }
+    }

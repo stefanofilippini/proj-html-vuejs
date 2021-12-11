@@ -1,21 +1,25 @@
 <template>
-  <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  </div>
+    <div id="app">
+        <Header/>
+        <Main/>
+    </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
 
 export default {
-  name: 'App',
-  components: {
-//    HelloWorld
-  }
+    name: 'App',
+    
+    components: {
+        Header,
+        Main,
+    }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+@import '@/styles/Global.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 </style>
