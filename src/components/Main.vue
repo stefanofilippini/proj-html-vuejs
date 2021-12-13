@@ -51,12 +51,23 @@
                     </div>
                 </div>
             </div>
+            <img class="top-img" src="../assets/upcoming-events-calendar-icon.png" alt="">
+            <h3>Upcoming Events</h3>
+            <div class="sessions">
+                <Card1 v-for="(session, i) in Sessions" :key="`session-${i}`"
+                    :Title= "session.Title"
+                    :Dates="session.Date"
+                    :Paragraph="session.Par"
+                    :Button="session.Button"
+                />
+            </div>
         </section>
     </div>
 </template>
 
 <script>
 import Section from '@/components/Section.vue'
+import Card1 from '@/components/Card-1.vue'
 
 export default {
     name: 'Main',
@@ -103,12 +114,34 @@ export default {
                     title: "Graduation Day",
                     description: "On the day of graduation, all student gather for the ceremony and then network and party among others"
                 },
+            ],
+
+            Sessions: [
+                {
+                    Title: 'Coaching Sessions',
+                    Date: '20 May 21:30 PM',
+                    Par: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, id! Quo suscipit veniam, ut illum nostrum accusamus voluptas quaerat accusantium laborum exercitationem itaque doloremque rem. Id porro sit quasi inventore.',
+                    Button: 'Find More'
+                },
+                {
+                    Title: 'Coaching Sessions',
+                    Date: '24 Mar 18:00 PM',
+                    Par: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, id! Quo suscipit veniam, ut illum nostrum accusamus voluptas quaerat accusantium laborum exercitationem itaque doloremque rem. Id porro sit quasi inventore.',
+                    Button: 'Find More'
+                },
+                {
+                    Title: 'Coaching Sessions',
+                    Date: '12 Feb 12:30 PM',
+                    Par: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, id! Quo suscipit veniam, ut illum nostrum accusamus voluptas quaerat accusantium laborum exercitationem itaque doloremque rem. Id porro sit quasi inventore.',
+                    Button: 'Find More'
+                },
             ]
         }
     },
 
     components: {
         Section,
+        Card1,
     },
 
 }
@@ -207,6 +240,9 @@ export default {
         .top-img {
             margin-top: 100px;
             height: 75px;
+            &:last-of-type {
+                margin-top: 50px;
+            }
         }
         h3 {
             margin-top: 30px;
@@ -214,6 +250,9 @@ export default {
             color: white;
             font-size: 50px;
             background-color: #db2a2c;
+            &:last-of-type {
+                background-color: transparent;
+            }
         }
         .timeline {
             height: 500px;
@@ -257,6 +296,11 @@ export default {
                     top: 60px;
                 }
             }
+        }
+        .sessions {
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
         }
     }
 
