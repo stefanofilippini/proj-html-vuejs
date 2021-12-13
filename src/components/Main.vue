@@ -1,11 +1,12 @@
 <template>
     <div class="container">
-        <div class="background-image">
+        <div class="background-image1">
             <Section
                 titleImage="Books-icon.png"
                 title="Thousands of courses for any type of student"
                 Paragraph="At EduPrime, it doesn't matter what domain you wishto pursue a career in. Here you can find a course that satisfies your needs within a click away and applies for a course in a matter of minutes. EduPrime is ranked as the most versatile university in the world, thanks to the number of courses it provides."
                 Button="Browse through courses"
+                ButtonType="button-3"
                 image="Graduation-Illustration.png"
             />
         </div>
@@ -77,6 +78,53 @@
                     :Button ="course.Button"
                 />
             </div>
+        </div>
+        <Section
+            class="section-2"
+            titleImage="Exam-icon.png"
+            title="The most efficient examination method"
+            Paragraph="EduPrime has gathered teachers from around the globe to brainstorm in order to facilitate the evaluation of our students. Every teacher from our university has an influence on how students are evaluated at his/her subject."
+            ParagraphDim="medium"
+            Button="Discover the Method"
+            ButtonType="button-4"
+            image="Exam-Illustration.png"
+        />
+        <Section
+            class="section-3"
+            Direction="row-reverse"
+            titleImage="Exam-icon-1.png"
+            title="Variable fees for international students"
+            Paragraph="EduPrime has gathered teachers from around the globe to brainstorm in order to facilitate the evaluation of our students. Every teacher from our university has an influence on how students are evaluated at his/her subject."
+            ParagraphDim="medium"
+            Button="List of Fees"
+            ButtonType="button-4"
+            image="Girl-Illustration.png"
+        />
+        <div class="newsletter">
+            <div class="container-newsletter">
+                <h3>
+                    Subscribe Now to Our Newsletter !
+                </h3>
+                <div class="form">
+                    <input type="email" placeholder="Email address...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="partners">
+            <h3>
+                Partners
+            </h3>
+            <p>
+                Leverage agile frameworks to provide a robust synopsis for high level<br>
+                overviews. Iterative approaches to corporate strategy.
+            </p>
+            <ul>
+                <li v-for="(partner, i) in Partners" :key="`${i}`">
+                    <img :src="require(`@/assets/${Partners[i]}`)" alt="">
+                </li>
+            </ul>
+            <img class="lower-image" src="../assets/background-wave3.png" alt="">
         </div>
     </div>
 </template>
@@ -183,6 +231,18 @@ export default {
                     Price: 'Free',
                     Button: 'View Course'
                 },
+            ],
+
+            Partners: [
+                'partner-2.png',
+                'partner-3.png',
+                'partner-4.png',
+                'partner-5.png',
+                'partner-6.png',
+                'partner-8.png',
+                'partner-1.png',
+                'partner-7.png',
+
             ]
         }
     },
@@ -200,7 +260,7 @@ export default {
     .container {
         overflow-x: hidden;
     }
-    .background-image {
+    .background-image1 {
         height: 700px;
         background-image: url(../assets/home-background.png);
         background-repeat: no-repeat;
@@ -377,6 +437,94 @@ export default {
         .courses {
             display: flex;
             justify-content: space-between;
+        }
+    }
+    .section-2 {
+        height: 550px;
+    }
+    .section-3 {
+        height: 550px;
+        margin-bottom: 100px;
+    }
+    .newsletter {
+        display: flex;
+        justify-content: center;
+        background-color: #e56768;
+        .container-newsletter {
+            height: 200px;
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h3 {
+                font-size: 35px;
+                color: white;
+            }
+            .form {
+                position: relative;
+                input {
+                    height: 65px;
+                    width: 400px;
+                    padding: 30px;
+                    font-family: sans-serif;
+                    font-size: 15px;
+                    font-weight: 500;
+                    border-radius: 100px;
+                    border: none;
+                }
+                button {
+                    position: absolute;
+                    height: 67px;
+                    width: 67px;
+                    background-color: #e5d45d;
+                    border-radius: 50%;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    right: -1px;
+                    bottom: -1px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #dd3333;
+                    }
+                }
+            }
+        }
+    }
+    .partners {
+        height: 600px;
+        overflow: hidden;
+        .lower-image {
+            background-color: #f7f8fa;
+            width: 150%;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px;
+        h3 {
+            color: #3d404f;
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+        p {
+            font-family: sans-serif;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            height: 50px;
+            li {
+                height: 100%;
+                img {
+                    height: 100%;
+                    margin: 20px;
+                    filter: opacity(0.3);
+                    background-color: none;
+                }
+            }
         }
     }
 

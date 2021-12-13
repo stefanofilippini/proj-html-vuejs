@@ -1,17 +1,17 @@
 <template>
-  <div class="container">
-            <div class="description">
-                <img :src="require(`@/assets/${titleImage}`)" alt="">
-                <h3>{{ title }}</h3>
-                <p>{{Paragraph}}</p>
-                <div class="buttons">
-                    <a class="button-3" href="#">{{ Button }}</a>
-                </div>
-            </div>
-            <div class="img">
-                <img :src="require(`@/assets/${image}`)" alt="">
+    <div class="container" :class="Direction">
+        <div class="description">
+            <img :src="require(`@/assets/${titleImage}`)" alt="">
+            <h3>{{ title }}</h3>
+            <p :class="ParagraphDim">{{Paragraph}}</p>
+            <div class="buttons">
+                <a :class="ButtonType" href="#">{{ Button }}</a>
             </div>
         </div>
+        <div class="img">
+            <img :src="require(`@/assets/${image}`)" alt="">
+        </div>
+    </div>
 </template>
 
 <script>
@@ -19,10 +19,13 @@ export default {
     name: 'Section',
 
     props: {
+        Direction: String,
         titleImage: String,
         title: String,
         Paragraph: String,
+        ParagraphDim: String,
         Button: String,
+        ButtonType: String,
         image: String,
     },
 
@@ -37,6 +40,9 @@ export default {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            &.row-reverse {
+                flex-direction: row-reverse;
+            }
             .description {
                 width: 50%;
                 color: #3d404f;
@@ -53,6 +59,9 @@ export default {
                 p {
                     font-family: sans-serif;
                     line-height: 30px;
+                    &.medium {
+                        width: 70%;
+                    }
                 }
                 .buttons {
                     margin-top: 70px;
