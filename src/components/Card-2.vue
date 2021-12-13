@@ -1,26 +1,28 @@
 <template>
     <div class="card">
+        <img :src="require(`@/assets/${Image}`)" alt="">
         <h1>{{ Title }}</h1>
-        <div class="date">
-            <span><i class="far fa-calendar-alt"></i> {{ Dates }}</span>
+        <div class="card-attribute Teacher">
+            <span><i class="far fa-user"></i>Teacher:</span><span>{{ Teacher }}</span>
         </div>
-        <p>
-            {{ Paragraph }}
-        </p>
+        <div class="card-attribute Price">
+            <span><i class="far fa-money-bill-alt"></i>Price:</span><span>{{ Price }}</span>
+        </div>
         <div class="buttons">
-            <a href="#" class="button-4"><i class="fas fa-plus"></i> {{ Button }}</a>
+            <a href="#" class="button-4"><i class="far fa-eye"></i> {{ Button }}</a>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Card1',
+    name: 'Card2',
 
     props: {
+        Image: String,
         Title: String,
-        Dates: String,
-        Paragraph: String,
+        Teacher: String,
+        Price: String,
         Button: String,
     },
 }
@@ -29,25 +31,34 @@ export default {
 <style lang="scss" scoped>
     .card {
         position: relative;
-        width: 370px;
         text-align: center;
         background-color: white;
-        padding: 30px 30px 45px;
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+        padding: 30px 30px 30px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        img {
+            max-height: 80px;
+            margin-bottom: 20px;
+        }
         h1 {
-            font-size: 30px;
-            color: #3d404f;
+            font-size: 19px;
+            color: #223441;
             margin-bottom: 5px;
         }
-        .date {
+        .card-attribute {
             margin-bottom: 10px;
             span {
                 font-size: 13px;
                 font-family: sans-serif;
                 color: #82848e;
+                margin-right: 5px;
                 .far {
-                    font-size: 15px;
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+                &:last-of-type {
+                    color: #6b6c74;
+                    font-weight: 700;
                 }
             }
         }
@@ -61,12 +72,12 @@ export default {
             -webkit-line-clamp: 2;
         }
         .buttons {
-            margin-top: 70px;
+            width: 100%;
             position: absolute;
             transform: translate(-50%, -50%);
             bottom: -20px;
             left: 50%;
-            .fas {
+            .far {
                 margin-right: 5px;
             }
             a {
@@ -74,7 +85,7 @@ export default {
                 padding: 10px 20px;
                 border-radius: 100px;
                 font-size: 14px;
-                box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
             }
         }
     }

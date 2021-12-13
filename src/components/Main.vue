@@ -61,13 +61,30 @@
                     :Button="session.Button"
                 />
             </div>
+            <div class="buttons">
+                <a href="#" class="button-1">View All Events</a>
+            </div>
         </section>
+        <img class="lower-wave" src="../assets/svg/svg-1.svg" alt="">
+        <div class="courses-container">
+            <h3>Latest Courses</h3>
+            <div class="courses">
+                <Card2 v-for="(course , i) in Courses" :key="`course-${i}`"
+                    :Image ="course.Img"
+                    :Title ="course.Title"
+                    :Teacher ="course.Teacher"
+                    :Price ="course.Price"
+                    :Button ="course.Button"
+                />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import Section from '@/components/Section.vue'
 import Card1 from '@/components/Card-1.vue'
+import Card2 from '@/components/Card-2.vue'
 
 export default {
     name: 'Main',
@@ -135,6 +152,37 @@ export default {
                     Par: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, id! Quo suscipit veniam, ut illum nostrum accusamus voluptas quaerat accusantium laborum exercitationem itaque doloremque rem. Id porro sit quasi inventore.',
                     Button: 'Find More'
                 },
+            ],
+
+            Courses: [
+                {
+                    Img: 'Decisions-icon.png',
+                    Title: 'Make Better Decisions',
+                    Teacher: 'James Collins',
+                    Price: '$21.00',
+                    Button: 'View Course'
+                },
+                {
+                    Img: 'Speaker-icon.png',
+                    Title: 'How to be a speaker',
+                    Teacher: 'James Collins',
+                    Price: 'Free',
+                    Button: 'View Course'
+                },
+                {
+                    Img: 'Network-icon.png',
+                    Title: 'Network Introductions',
+                    Teacher: 'James Collins',
+                    Price: 'Free',
+                    Button: 'View Course'
+                },
+                {
+                    Img: 'Brand-icon.png',
+                    Title: 'Brand Management',
+                    Teacher: 'James Collins',
+                    Price: 'Free',
+                    Button: 'View Course'
+                },
             ]
         }
     },
@@ -142,6 +190,7 @@ export default {
     components: {
         Section,
         Card1,
+        Card2,
     },
 
 }
@@ -151,14 +200,12 @@ export default {
     .container {
         overflow-x: hidden;
     }
-
     .background-image {
         height: 700px;
         background-image: url(../assets/home-background.png);
         background-repeat: no-repeat;
         background-position: center;
     }
-
     .faculties {
         color: #3d404f;
         display: flex;
@@ -299,6 +346,35 @@ export default {
         }
         .sessions {
             width: 65%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons {
+            margin: 100px 0px;
+            a {
+                text-decoration: none;
+                padding: 25px 40px;
+                border-radius: 100px;
+                font-size: 16px;
+            }
+        }
+    }
+    .lower-wave {
+        margin-top: -1px;
+        margin-left: -7px;
+    }
+    .courses-container {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        h3 {
+            color: #3d404f;
+            font-size: 40px;
+            margin-bottom: 60px;
+        }
+        .courses {
             display: flex;
             justify-content: space-between;
         }
