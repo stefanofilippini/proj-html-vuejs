@@ -34,3 +34,12 @@
             color: white;
         }
     }
+
+    .button-4 {
+        background-color: #e56768;
+        color: white;
+        &:hover {
+            background-color: #e5d45d;
+            color: white;
+        }
+    }

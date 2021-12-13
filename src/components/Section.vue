@@ -1,15 +1,15 @@
 <template>
   <div class="container">
             <div class="description">
-                <img src="../assets/Books-icon.png" alt="">
-                <h3>Thousands of courses for any type of student</h3>
-                <p>At EduPrime, it doesn't matter what domain you wishto pursue a career in. Here you can find a course that satisfies your needs within a click away and applies for a course in a matter of minutes. EduPrime is ranked as the most versatile university in the world, thanks to the number of courses it provides.</p>
+                <img :src="require(`@/assets/${titleImage}`)" alt="">
+                <h3>{{ title }}</h3>
+                <p>{{Paragraph}}</p>
                 <div class="buttons">
-                    <a class="button-3" href="#">Browse through courses</a>
+                    <a class="button-3" href="#">{{ Button }}</a>
                 </div>
             </div>
             <div class="img">
-                <img src="../assets/Graduation-Illustration.png" alt="">
+                <img :src="require(`@/assets/${image}`)" alt="">
             </div>
         </div>
 </template>
@@ -17,6 +17,14 @@
 <script>
 export default {
     name: 'Section',
+
+    props: {
+        titleImage: String,
+        title: String,
+        Paragraph: String,
+        Button: String,
+        image: String,
+    },
 
 }
 </script>

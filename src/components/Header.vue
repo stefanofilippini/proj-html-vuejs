@@ -24,8 +24,10 @@
                     <a class="button-1" href="#"><i class="fas fa-user-plus"></i> Apply for universities</a>
                 </div>
             </section>
-            <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-1.svg" alt="">
-            <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-2.svg" alt="">
+            <svg class="wave-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="0.9" d="M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,69.3C672,64,768,96,864,112C960,128,1056,128,1152,112C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            <svg class="wave-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="0.9" d="M0,64L48,64C96,64,192,64,288,90.7C384,117,480,171,576,181.3C672,192,768,160,864,133.3C960,107,1056,85,1152,64C1248,43,1344,21,1392,10.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            <!-- <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-1.svg" alt="">
+            <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-2.svg" alt=""> -->
         </div>
         
     </div>
@@ -86,6 +88,7 @@ export default {
             width: 100%;
             height: 100%;
             background-color: rgba($color: #df5e60, $alpha: 0.9);
+            overflow-y: hidden;
             header {
                 display: flex;
                 align-items: center;
@@ -166,10 +169,9 @@ export default {
             }
             .wave-1 {
                 position: absolute;
-                bottom: -1px;
+                bottom: -200px;
                 left: 0;
                 width: 100%;
-                height: 100px;
                 color: white;
             }
         }
