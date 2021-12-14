@@ -484,6 +484,7 @@ export default {
                     right: -1px;
                     bottom: -1px;
                     cursor: pointer;
+                    transition: 0.5s;
                     &:hover {
                         background-color: #dd3333;
                     }
@@ -522,7 +523,11 @@ export default {
                     height: 100%;
                     margin: 20px;
                     filter: opacity(0.3);
+                    transition: 0.5s;
                     background-color: none;
+                    &:hover {
+                        filter: opacity(1);
+                    }
                 }
             }
         }

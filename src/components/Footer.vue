@@ -8,7 +8,7 @@
                 </p>
                 <ul>
                     <li v-for="(social, i) in Socials" :key="`social-${i}`">
-                        <i class="fab" :class="social"></i>
+                        <a href="#"><i class="fab" :class="social"></i></a>
                     </li>
                 </ul>
             </div>
@@ -129,6 +129,9 @@ export default {
                         border-radius: 50%;
                         margin-right: 15px;
                         transition: 0.5s;
+                        a {
+                            color: white;
+                        }
                         &:hover {
                             background-color: #e9d758;
                         }
@@ -150,6 +153,10 @@ export default {
                             color: white;
                             font-family: sans-serif;
                             font-size: 15px;
+                            transition: 0.5s;
+                            &:hover {
+                                color: #e9d758;
+                            }
                         }
                     }
                 }
@@ -185,6 +192,7 @@ export default {
                         right: 0px;
                         bottom: 0px;
                         cursor: pointer;
+                        transition: 0.5s;
                         &:hover {
                             background-color: #dd3333;
                         }
@@ -206,12 +214,17 @@ export default {
                         border-radius: 50px;
                         margin-bottom: 10px;
                         margin-left: 10px;
+                        transition: 0.5s;
                         a {
                             font-size: 11px;
                             font-family: sans-serif;
                             text-decoration: none;
                             color: white;
                             text-transform: uppercase;
+                        }
+                        &:hover {
+                            border: 1px solid #e9d758;
+                            background-color: #e9d758;
                         }
                     }
                 }

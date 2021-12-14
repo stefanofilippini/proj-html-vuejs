@@ -11,6 +11,7 @@
     .button-1 {
         background-color: #e5d45d;
         color: white;
+        transition: 0.5s;
         &:hover {
             background-color: white;
             color: #e56768;
@@ -20,6 +21,7 @@
     .button-2 {
         background-color: white;
         color: #e56768;
+        transition: 0.5s;
         &:hover {
             background-color: #e5d45d;
             color: white;
@@ -29,6 +31,7 @@
     .button-3 {
         background-color: #e5d45d;
         color: white;
+        transition: 0.5s;
         &:hover {
             background-color: #d62f32;
             color: white;
@@ -38,6 +41,7 @@
     .button-4 {
         background-color: #e56768;
         color: white;
+        transition: 0.5s;
         &:hover {
             background-color: #e5d45d;
             color: white;
