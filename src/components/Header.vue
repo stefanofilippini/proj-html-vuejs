@@ -21,7 +21,7 @@
                 </div>
                 <div class="buttons">
                     <a class="button-1" href="#"><i class="fas fa-search"></i> Search courses</a>
-                    <a class="button-1" href="#"><i class="fas fa-user-plus"></i> Apply for universities</a>
+                    <a class="button-2" href="#"><i class="fas fa-user-plus"></i> Apply for universities</a>
                 </div>
             </section>
             <svg class="wave-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="0.9" d="M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,69.3C672,64,768,96,864,112C960,128,1056,128,1152,112C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
@@ -29,7 +29,6 @@
             <!-- <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-1.svg" alt="">
             <img class="wave-1" preserveAspectRatio="none" src="@/assets/svg/wave-2.svg" alt=""> -->
         </div>
-        
     </div>
 </template>
 
