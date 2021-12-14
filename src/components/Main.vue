@@ -17,19 +17,30 @@
                 to satisfy any student's needs.
             </p>
             <ul>
-                <li v-for="(facultie, i) in Faculties" :key="`facultie-${i}`">
-                    <img :src="require(`../assets/${facultie.img}`)" alt="">
-                    <h4>{{facultie.name}}</h4>
+                <li 
+                    class="facultie" 
+                    :class="ActiveFacultie == i ? 'active' : ''" 
+                    v-for="(facultie, i) in Faculties" 
+                    :key="`facultie-${i}`" 
+                    @click="activate(i)"
+                >
+                    <img :src="require(`../assets/${facultie.IconImg}`)" alt="">
+                    <h4>{{facultie.Name}}</h4>
                 </li>
             </ul>
-            <div class="active-facultie">
-                <img src="../assets/Gavel-Illustration-e1556884768193.png" alt="">
+            <div 
+                class="active-facultie"
+                v-for="(facultie, i) in Faculties" 
+                :key="`facultie-${i}`"
+                v-show="ActiveFacultie == i"
+            >
+                <img :src="require(`../assets/${facultie.Image}`)" alt="">
                 <div class="description">
                     <h4>
-                        Titolo
+                        {{facultie.Name}}
                     </h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe unde quae veniam doloremque facilis dolore recusandae consectetur sunt nemo vitae, commodi perferendis voluptatum reprehenderit tempore quas quos totam minima. Nemo?
+                        {{facultie.Description}}
                     </p>
                     <div class="buttons">
                         <a href="#" class="button-4">Read More</a>
@@ -141,24 +152,34 @@ export default {
         return {
             Faculties:[
                 {
-                    img: 'Gavel-v2.png',
-                    name: 'Law Faculty',
+                    IconImg: 'Gavel-v2.png',
+                    Name: 'Law Faculty',
+                    Image: 'Gavel-Illustration-e1556884768193.png',
+                    Description: 'Learning from world-leading academics and practitioners, you’ll not only receive an outstanding grounding in the theory of law, but you will be able to understand how those principles are applied in practice through a range of student-led activities and competitions.'
                 },
                 {
-                    img: 'Coins-tabs-v2.png',
-                    name: 'Economy',
+                    IconImg: 'Coins-tabs-v2.png',
+                    Name: 'Economy',
+                    Image: 'Economy.png',
+                    Description: 'Economics focuses on the behaviour and interactions of economic agents and how economies work. Microeconomics analyzes basic elements in the economy, including individual agents and markets, their interactions, and the outcomes of interactions, including unemployment of resource.'
                 },
                 {
-                    img: 'Medicine-tabs-v2.png',
-                    name: 'Medicine',
+                    IconImg: 'Medicine-tabs-v2.png',
+                    Name: 'Medicine',
+                    Image: 'Medicine.png',
+                    Description: 'Medicine is the science and practice of establishing the diagnosis, prognosis, treatment, and prevention of disease. Medicine encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness.'
                 },
                 {
-                    img: 'Computer-tabs-v2.png',
-                    name: 'Computer Science',
+                    IconImg: 'Computer-tabs-v2.png',
+                    Name: 'Computer Science',
+                    Image: 'Computer-Science.png',
+                    Description: 'Computer science is the study of processes that interact with data and that can be represented as data in the form of programs. It enables the use of algorithms to manipulate, store, and communicate digital information. A computer scientist studies the theory of computation software systems.'
                 },
                 {
-                    img: 'Palette-tabs-v2.png',
-                    name: 'Graphic Design',
+                    IconImg: 'Palette-tabs-v2.png',
+                    Name: 'Graphic Design',
+                    Image: 'Graphic-Design.png',
+                    Description: 'Graphic design is the process of visual communication and problem-solving through the use of typography, photography and illustration. The field is considered a subset of visual communication and communication design, but sometimes the term ``graphic design`` is used synonymously.'
                 },
             ],
 
@@ -243,7 +264,9 @@ export default {
                 'partner-1.png',
                 'partner-7.png',
 
-            ]
+            ],
+
+            ActiveFacultie: 0,
         }
     },
 
@@ -251,6 +274,12 @@ export default {
         Section,
         Card1,
         Card2,
+    },
+
+    methods: {
+        activate (i) {
+            this.ActiveFacultie = i
+        }
     },
 
 }
@@ -298,9 +327,19 @@ export default {
                 flex-direction: column;
                 align-items: center;
                 color: #e56768;
+                transition: 0.5s;
                 img {
                     height: 100%;
                     margin-bottom: 20px;
+                }
+                &.active {
+                    background-color: #e56768;
+                    img {
+                        filter: brightness(3);
+                    }
+                    h4 {
+                        color: white;
+                    }
                 }
             }
         }

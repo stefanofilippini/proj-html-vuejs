@@ -168,7 +168,7 @@ export default {
             }
             .wave-1 {
                 position: absolute;
-                bottom: -200px;
+                bottom: -180px;
                 left: 0;
                 width: 100%;
                 color: white;
