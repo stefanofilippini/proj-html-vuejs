@@ -92,8 +92,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '@/styles/Global.scss';
     .background-container {
-        background-color: #e56768;
+        background-color: $primary_color;
         height: 500px;
         display: flex;
         justify-content: center;
@@ -125,7 +126,7 @@ export default {
                         height: 50px;
                         width: 50px;
                         padding: 16px;
-                        border: 2px solid #e9d758;
+                        border: 2px solid $secondary_color;
                         border-radius: 50%;
                         margin-right: 15px;
                         transition: 0.5s;
@@ -133,7 +134,7 @@ export default {
                             color: white;
                         }
                         &:hover {
-                            background-color: #e9d758;
+                            background-color: $secondary_color;
                         }
                     }
                 }

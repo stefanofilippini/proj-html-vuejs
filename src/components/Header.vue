@@ -79,6 +79,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '@/styles/Global.scss';
     .background-image {
         height: 800px;
         background-image: url(../assets/theme_slider2_bg-1.jpg);
@@ -86,7 +87,7 @@ export default {
             position: relative;
             width: 100%;
             height: 100%;
-            background-color: rgba($color: #df5e60, $alpha: 0.9);
+            background-color: rgba($color: $primary_color, $alpha: 0.9);
             overflow-y: hidden;
             header {
                 display: flex;
@@ -110,26 +111,28 @@ export default {
                             color: white;
                             &:hover {
                                 a {
-                                    color: #e9d758;
+                                    color: $secondary_color;
                                 }
                             }
                             a {
                                 color: white;
                                 text-decoration: none;
+                                transition: 0.5s;
                                 span {
                                     margin-left: 3px;
                                     font-size: 12px;
                                 }
                             }
                             &:last-of-type {
-                                background-color: #e5d45d;
+                                background-color: $secondary_color;
                                 text-transform: uppercase;
                                 padding: 25px 40px;
                                 border-radius: 100px;
+                                transition: 0.5s;
                                 &:hover {
                                     background-color: white;
                                     a {
-                                        color: #df5e60;
+                                        color: $primary_color;
                                     }
                                 }
                             }

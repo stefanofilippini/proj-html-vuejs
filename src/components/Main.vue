@@ -286,6 +286,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '@/styles/Global.scss';
     .container {
         overflow-x: hidden;
     }
@@ -326,14 +327,14 @@ export default {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                color: #e56768;
+                color: $primary_color;
                 transition: 0.5s;
                 img {
                     height: 100%;
                     margin-bottom: 20px;
                 }
                 &.active {
-                    background-color: #e56768;
+                    background-color: $primary_color;
                     img {
                         filter: brightness(3);
                     }
@@ -379,7 +380,7 @@ export default {
         margin-left: -6px;
     }
     .university-year {
-        background-color: #e56768;
+        background-color: $primary_color;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -488,7 +489,7 @@ export default {
     .newsletter {
         display: flex;
         justify-content: center;
-        background-color: #e56768;
+        background-color: $primary_color;
         .container-newsletter {
             height: 200px;
             width: 70%;
